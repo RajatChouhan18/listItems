@@ -3,3 +3,5 @@ node_modules
 configs/access.log
 .vscode
 package-lock.json
+public
+.env.local
