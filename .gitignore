@@ -5,3 +5,4 @@ configs/access.log
 package-lock.json
 public
 .env.local
+*collection.json

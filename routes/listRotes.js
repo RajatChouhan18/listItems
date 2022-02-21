@@ -2,25 +2,25 @@ var router = require('express').Router();
 var ListController = require('../controllers/listController.js')
 var CommonValidators = require('../validators/commonValidators');
 
-// define the home page route
+// fetch list
 router.post('/fetch', CommonValidators.listing(), CommonValidators.validate(), function (req, res, next) {
   let listControllerObj = new ListController(req, res, next);
   return listControllerObj.fetchList();
 });
 
-// define the about route
+// add item to list
 router.post('/addItem', CommonValidators.addItem(), CommonValidators.validate(), (req, res, next) => {
   let listControllerObj = new ListController(req, res, next);
   return listControllerObj.addItem();
 });
 
-// define the about route
+// delete item from list
 router.post('/deleteItem', CommonValidators.deleteItem(), CommonValidators.validate(), (req, res, next) => {
   let listControllerObj = new ListController(req, res, next);
   return listControllerObj.deleteItem();
 });
 
-// File upload for incident and solution(if available)
+// file upload
 router.post('/uploadImage', (req, res, next) => {
   let listControllerObj = new ListController(req, res, next);
   return listControllerObj.fileUpload();
